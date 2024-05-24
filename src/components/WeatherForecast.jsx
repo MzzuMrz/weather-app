@@ -39,6 +39,31 @@ function HourlyForecast({ time, weatherType, temp, Icon }) {
   );
 }
 
+function DailyForecast({ day, weatherType, minTemp, maxTemp }) {
+  return (
+    <div className="daily__info">
+      <div className="daily__box">
+        <p>{day}</p>
+        <p>{weatherType}</p>
+      </div>
+      <div className="daily__temps">
+        <WeatherDetail
+          label="Max Temp"
+          value={`${maxTemp}°C`}
+          Icon={FaTemperatureHigh}
+          color="DFA1A1"
+        />
+        <WeatherDetail
+          label="Min Temp"
+          value={`${minTemp}°C`}
+          Icon={FaTemperatureLow}
+          color="6D97CA"
+        />
+      </div>
+    </div>
+  );
+}
+
 function WeatherForecast({ forecast, onSearch }) {
   // Datos hardcodeados de forecast y hourlyForecast si no están presentes en el payload
   const dailyForecast = forecast.length
@@ -122,6 +147,39 @@ function WeatherForecast({ forecast, onSearch }) {
     },
   ];
 
+  const fiveDayForecast = [
+    {
+      day: "Monday",
+      weatherType: "Partly Cloudy",
+      minTemp: "15°C",
+      maxTemp: "22°C",
+    },
+    {
+      day: "Tuesday",
+      weatherType: "Sunny",
+      minTemp: "17°C",
+      maxTemp: "25°C",
+    },
+    {
+      day: "Wednesday",
+      weatherType: "Cloudy",
+      minTemp: "16°C",
+      maxTemp: "23°C",
+    },
+    {
+      day: "Thursday",
+      weatherType: "Rain",
+      minTemp: "14°C",
+      maxTemp: "20°C",
+    },
+    {
+      day: "Friday",
+      weatherType: "Sunny",
+      minTemp: "18°C",
+      maxTemp: "27°C",
+    },
+  ];
+
   return (
     <div className="weather-forecast">
       <div className="weather-forecast__searchbar">
@@ -164,6 +222,23 @@ function WeatherForecast({ forecast, onSearch }) {
           </div>
         ))}
       </div>
+      <hr className="weather-forecast__divider" />
+
+      {/* Nueva sección de pronóstico de 5 días */}
+      <h1 className="weather-forecast__title">5-Day Weather Forecast</h1>
+      <div className="weather-forecast__hourly">
+        {fiveDayForecast.map((item, index) => (
+          <div key={index} className="daily-forecast">
+            <DailyForecast
+              day={item.day}
+              weatherType={item.weatherType}
+              minTemp={item.minTemp}
+              maxTemp={item.maxTemp}
+            />
+          </div>
+        ))}
+      </div>
+
       <hr className="weather-forecast__divider" />
       <p className="weather-forecast__title2">Today’s Weather Forecast...</p>
       <div className="weather-forecast__hourly">
