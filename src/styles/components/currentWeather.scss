@@ -3,9 +3,9 @@
 .current-weather {
   display: flex;
   align-items: center;
-  gap: 1em;
   justify-content: center;
   padding: 10px;
+  gap: 1em;
 
   &__temperature {
     font-size: 143px;
@@ -14,15 +14,16 @@
 
   &__info {
     display: flex;
+    width: 21em;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    width: 15em;
   }
 
   &__city {
     display: flex;
     flex-direction: column;
+    width: 10em;
     font-size: 60px;
     margin: 0;
   }
@@ -43,11 +44,12 @@
 /* Media queries for mobile devices */
 @media (max-width: 800px) {
   .current-weather {
+    display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    width: 10em;
+    width: 15em;
+    margin: 0 -1em;
   }
 
   .current-weather__temperature {
@@ -58,7 +60,9 @@
   }
 
   .current-weather__info {
-    width: 100%;
+    width: 60%;
+    display: flex;
+    text-align: left;
   }
 
   .current-weather__city {
@@ -67,6 +71,7 @@
     font-weight: 300;
     font-size: 30px;
     color: #ffffff;
+    width: 5em;
   }
 
   .current-weather__datetime {
