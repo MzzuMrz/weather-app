@@ -4,11 +4,15 @@
   right: 0;
   width: 27em;
   color: white;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px); // Para Safari y otros navegadores webkit
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 
   &__searchbar {
     margin-top: 2.6em;
-    margin-right: 3.5em;
-    border-bottom: 1px solid #FFFFFF ;
   }
 
   &__title,
@@ -47,7 +51,7 @@
   }
 }
 
-.weather-forecast__divider {
+.divider {
   margin: 4em 3em -3.5em 0.7em;
 }
 
@@ -82,14 +86,13 @@
 }
 
 /* Media queries for mobile devices */
-@media (max-width: 766px) {
+@media (max-width: 1200px) {
   .weather-dashboard {
     flex-direction: column;
     align-items: center;
-    padding: 10px;
   }
 
-  .weather-forecast__divider {
+  .divider {
     display: none;
   }
 
@@ -115,37 +118,35 @@
     &__searchbar {
       display: none;
     }
+  }
 
-    &__title2 {
-      text-align: center;
-      font-size: 14px;
-      margin: 0;
-    }
+  .weather-forecast__title2 {
+    text-align: center;
+    font-size: 14px;
+    margin: 0;
+  }
 
-    &__title {
-      text-align: center;
-      font-size: 14px;
-      margin-top: 3em;
-      margin-left: 1em;
-    }
+  .weather-forecast__title {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 3em;
+    margin-left: 1em;
+  }
 
-    &__details {
-      margin: -3.2em 0 0 2.3em;
-    }
+  .divider {
+    margin: 2em 1em;
+  }
 
-    &__detail {
-      font-weight: 300;
-      font-size: 14px;
-      text-align: center;
-      text-transform: uppercase;
-      color: #ffffff;
-    }
+  .weather-forecast__details {
+    margin: -3.2em 0 0 2.3em;
+  }
 
-    &__hourly {
-      display: flex;
-      flex-direction: column;
-      width: 22em;
-    }
+  .weather-forecast__detail {
+    font-weight: 300;
+    font-size: 14px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff;
   }
 
   .weather-info {
@@ -164,5 +165,11 @@
     font-size: 14px;
     line-height: 23px;
     color: rgba(255, 255, 255, 0.7);
+  }
+
+  .weather-forecast__hourly {
+    display: flex;
+    flex-direction: column;
+    width: 22em;
   }
 }

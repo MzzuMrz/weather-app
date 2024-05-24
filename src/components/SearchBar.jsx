@@ -1,4 +1,3 @@
-// src/components/SearchBar.jsx
 import React, { useState, useEffect } from "react";
 import { FaSearch } from "react-icons/fa";
 import "../styles/components/searchBar.scss";
@@ -9,10 +8,10 @@ function SearchBar({ onSearch }) {
   const debouncedCity = useDebounce(city, 500);
 
   useEffect(() => {
-    if (debouncedCity && debouncedCity !== city) {
+    if (debouncedCity) {
       onSearch(debouncedCity);
     }
-  }, [debouncedCity, city, onSearch]);
+  }, [debouncedCity, onSearch]);
 
   const handleChange = (event) => {
     setCity(event.target.value);

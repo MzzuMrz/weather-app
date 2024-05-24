@@ -7,14 +7,7 @@ function CurrentWeather({ weather }) {
     return <p>Loading weather data...</p>; // Maneja el caso de que no hay datos disponibles
   }
 
-  const {
-    temp,
-    city,
-    description,
-    date,
-    time,
-    icon,
-  } = weather;
+  const { temp, city, description, date, time, icon } = weather;
 
   return (
     <div className="current-weather">

@@ -4,6 +4,7 @@
 
 body {
   margin: 0;
+  padding: 0;
 }
 
 .weather-dashboard {
@@ -23,7 +24,7 @@ body {
   padding: 0 4em 0 1.5em;
   overflow: scroll;
   backdrop-filter: blur(7px);
-  border: 5px solid #9ba1a349;
+  border-left: 5px solid #9ba1a349;
   color: white;
 }
 
@@ -80,10 +81,10 @@ body {
   .weather-forecast {
     position: relative;
     height: auto;
-    width: 90%;
+    width: 80%;
+    padding: 0 3em;
     margin-top: 20px;
-    padding: 1em;
-    border-top: 5px solid #9ba1a349;
+    border-top: 2px solid #9ba1a349;
   }
   .weather-forecast-dashboard__searchbar {
     display: block;
@@ -95,22 +96,23 @@ body {
   .weather-dashboard {
     flex-direction: column;
     align-items: center;
-    padding: 10px;
   }
 
   .current-weather {
     position: absolute;
     top: 10%;
     left: 5%;
-    width: fit-content;
+    width: 90%;
     padding: 10px;
     margin-bottom: 20px;
   }
 
   .weather-forecast {
-    width: 100%;
-    height: 25.3em;
+    width: 76%;
+    height: 33em;
     border: none;
+    border-radius: 0;
+
     border-top: 5px solid #9ba1a349;
   }
 
