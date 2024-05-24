@@ -1,0 +1,125 @@
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+.weather-dashboard {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 100vh;
+  background: url("../../assets/images/bg-weather.png") center/cover no-repeat;
+  position: relative;
+}
+.weather-forecast-dashboard__searchbar {
+  display: none;
+}
+
+.weather-forecast {
+  height: 100vh;
+  padding: 0 4em 0 1.5em;
+  overflow: scroll;
+  backdrop-filter: blur(7px);
+  border: 5px solid #9ba1a349;
+  color: white;
+}
+
+.current-weather {
+  position: absolute;
+  top: 70%;
+  left: 5%;
+  width: 40%;
+  padding: 0 20px;
+  color: #fff;
+}
+
+.weather-info {
+  align-self: flex-end;
+  width: 60%;
+  margin-right: 20px;
+  color: #fff;
+  border-radius: 10px;
+  overflow-y: scroll;
+}
+
+.detail__info,
+.detail__icon,
+.hourly__info,
+.hourly__box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.detail__info,
+.detail__icon {
+  gap: 10px;
+}
+
+.hourly__box {
+  gap: 1.5rem;
+}
+/* Media queries for tablets */
+@media (max-width: 766px) {
+  .weather-dashboard {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .current-weather {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    width: 90%;
+    padding: 0 20px;
+  }
+
+  .weather-forecast {
+    position: relative;
+    height: auto;
+    width: 90%;
+    margin-top: 20px;
+    padding: 1em;
+    border-top: 5px solid #9ba1a349;
+  }
+  .weather-forecast-dashboard__searchbar {
+    display: block;
+  }
+}
+
+/* Media queries for mobile devices */
+@media (max-width: 767px) {
+  .weather-dashboard {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .current-weather {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    width: fit-content;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+
+  .weather-forecast {
+    width: 100%;
+    height: 25.3em;
+    border: none;
+    border-top: 5px solid #9ba1a349;
+  }
+
+  .weather-info {
+    width: 100%;
+    margin-right: 0;
+    border-radius: 0;
+  }
+  .weather-forecast-dashboard__searchbar {
+    display: block;
+  }
+}

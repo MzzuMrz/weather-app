@@ -1,0 +1,168 @@
+.weather-forecast {
+  padding: 1em;
+  position: absolute;
+  right: 0;
+  width: 27em;
+  color: white;
+
+  &__searchbar {
+    margin-top: 2.6em;
+    margin-right: 3.5em;
+    border-bottom: 1px solid #FFFFFF ;
+  }
+
+  &__title,
+  &__title2 {
+    font-family: "Roboto";
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 21px;
+    color: #ffffff;
+  }
+
+  &__title {
+    margin: 2em 0.5em;
+  }
+
+  &__title2 {
+    margin: 5.5em 2.7em 2.5em 0.7em;
+  }
+
+  &__detail {
+    width: 354px;
+    height: 21px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+
+  &__details {
+    padding: 0.1em 0.7em;
+  }
+
+  &__hourly {
+    padding: 0.1em 0.7em;
+  }
+}
+
+.weather-forecast__divider {
+  margin: 4em 3em -3.5em 0.7em;
+}
+
+.detail__info,
+.detail__icon,
+.hourly__info,
+.hourly__box {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 17px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.hourly__temp {
+  margin: 0em 1em;
+}
+
+.hourly__info {
+  font-size: 24px;
+  padding: 0 1.1em;
+}
+
+.detail__info,
+.detail__icon {
+  margin-right: 1.3em;
+}
+
+.hourly__box {
+  gap: 1.5rem;
+}
+
+/* Media queries for mobile devices */
+@media (max-width: 766px) {
+  .weather-dashboard {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .weather-forecast__divider {
+    display: none;
+  }
+
+  .current-weather {
+    position: relative;
+    top: 10%;
+    left: 5%;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .weather-forecast {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 3em;
+    height: auto;
+    width: 100%;
+    margin-top: 10px;
+    border: none;
+
+    &__searchbar {
+      display: none;
+    }
+
+    &__title2 {
+      text-align: center;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    &__title {
+      text-align: center;
+      font-size: 14px;
+      margin-top: 3em;
+      margin-left: 1em;
+    }
+
+    &__details {
+      margin: -3.2em 0 0 2.3em;
+    }
+
+    &__detail {
+      font-weight: 300;
+      font-size: 14px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #ffffff;
+    }
+
+    &__hourly {
+      display: flex;
+      flex-direction: column;
+      width: 22em;
+    }
+  }
+
+  .weather-info {
+    width: 100%;
+    margin-right: 0;
+    border-radius: 0;
+  }
+
+  .detail__info,
+  .detail__icon,
+  .hourly__info,
+  .hourly__box {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 23px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+}
