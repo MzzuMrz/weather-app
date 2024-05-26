@@ -1,5 +1,4 @@
-// src/components/WeatherDashboard.jsx
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import CurrentWeather from "./CurrentWeather";
 import WeatherForecast from "./WeatherForecast";
 import SearchBar from "./SearchBar";
@@ -22,7 +21,7 @@ function WeatherDashboard() {
 
   const [forecast, setForecast] = useState([]);
 
-  const handleSearch = async (city) => {
+  const handleSearch = useCallback(async (city) => {
     const apiKey = import.meta.env.VITE_OPENWEATHERMAP_API_KEY;
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
@@ -43,10 +42,7 @@ function WeatherDashboard() {
           date: new Date().toLocaleDateString(),
           time: new Date().toLocaleTimeString(),
         });
-
-        // Update forecast state with mock data or data from payload if available
         setForecast([
-          // Example of updating the forecast with mock data
           {
             maxTemp: data.main.temp_max,
             minTemp: data.main.temp_min,
@@ -62,9 +58,9 @@ function WeatherDashboard() {
     } catch (error) {
       console.error("Error fetching weather data:", error);
       setCurrentWeather(null);
-      setForecast([]); // Clear forecast on error
+      setForecast([]);
     }
-  };
+  }, []);
 
   return (
     <div className="weather-dashboard">
