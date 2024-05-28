@@ -193,13 +193,13 @@ function WeatherForecast({ forecast, onSearch }) {
             <p className="weather-forecast__detail">{item.detail}</p>
             <div className="weather-forecast_detailcontainer">
               <WeatherDetail
-                label="Max Temp"
+                label="Temp Max"
                 value={`${item.maxTemp}°C`}
                 Icon={FaTemperatureHigh}
                 color="DFA1A1"
               />
               <WeatherDetail
-                label="Min Temp"
+                label="Temp Min"
                 value={`${item.minTemp}°C`}
                 Icon={FaTemperatureLow}
                 color="6D97CA"

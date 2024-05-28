@@ -41,6 +41,76 @@
   }
 }
 
+/* Media queries for tablets */
+@media (max-width: 1200px) and (min-width: 801px) {
+  .current-weather {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 10.5em;
+    margin-top: 2.5em;
+    gap: 2.5em;
+    width: auto;
+    
+  }
+
+  .current-weather__temperature {
+    width: 161px;
+    height: 141px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 120px;
+    line-height: 141px;
+    /* identical to box height */
+    letter-spacing: -0.08em;
+
+    color: #ffffff;
+  }
+
+  .current-weather__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: -2em;
+  }
+
+  .current-weather__city {
+    width: 189px;
+    height: 53.01px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 56px;
+
+    color: #ffffff;
+  }
+
+  .current-weather__datetime {
+    display: flex;
+    flex-direction: row;
+    width: 184.89px;
+    height: 14px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #ffffff;
+  }
+
+  .current-weather__icon {
+    margin-left: 20px;
+    img {
+      width: 60px;
+      height: 60px;
+    }
+  }
+}
+
 /* Media queries for mobile devices */
 @media (max-width: 800px) {
   .current-weather {
@@ -51,7 +121,7 @@
     width: auto;
     height: 13em;
     margin: 0 -2.8em;
-    gap: .3em;
+    gap: 0.3em;
   }
 
   .current-weather__temperature {

@@ -63,8 +63,9 @@ body {
 .hourly__box {
   gap: 1.5rem;
 }
+
 /* Media queries for tablets */
-@media (max-width: 1200px) {
+@media (max-width: 1200px) and (min-width: 768px) {
   .weather-dashboard {
     flex-direction: column;
     align-items: center;
@@ -72,22 +73,24 @@ body {
 
   .current-weather {
     position: absolute;
-    top: 15%;
-    left: 5%;
+    top: 19em;
+    left: -9em;
     width: 90%;
     padding: 0 20px;
   }
 
   .weather-forecast {
-    height: 30em;
-    width: 80%;
-    top:15em;
+    height: 45em;
+    width: 100%;
+    bottom: 0;
     padding: 0 3em;
     margin-top: 20px;
     border-top: 2px solid #9ba1a349;
   }
   .weather-forecast-dashboard__searchbar {
     display: block;
+    margin-left: 28em;
+    margin-top: .3em;
   }
 
   .suggestions-list {
@@ -142,10 +145,10 @@ body {
 
   .weather-forecast {
     width: 80%;
-    height: 35em;
+    height: 30em;
     border: none;
     border-radius: 0;
-    margin-top: -.1em;
+    bottom: 0;
     border-top: 5px solid #9ba1a349;
   }
 
@@ -157,7 +160,7 @@ body {
   .weather-forecast-dashboard__searchbar {
     display: block;
     position: absolute;
-    top: .1em;
-    right: 9.2em;
+    top: 0.1em;
+    right: .5em;
   }
 }
