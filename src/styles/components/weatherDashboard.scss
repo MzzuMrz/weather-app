@@ -72,22 +72,56 @@ body {
 
   .current-weather {
     position: absolute;
-    top: 10%;
+    top: 15%;
     left: 5%;
     width: 90%;
     padding: 0 20px;
   }
 
   .weather-forecast {
-    position: relative;
-    height: 25em;
+    height: 30em;
     width: 80%;
+    top:15em;
     padding: 0 3em;
     margin-top: 20px;
     border-top: 2px solid #9ba1a349;
   }
   .weather-forecast-dashboard__searchbar {
     display: block;
+  }
+
+  .suggestions-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 100%; /* Justo debajo del input */
+    left: 0;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out;
+
+    &.loading {
+      opacity: 0.5;
+    }
+
+    li {
+      padding: 10px;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+    }
   }
 }
 
@@ -108,10 +142,10 @@ body {
 
   .weather-forecast {
     width: 80%;
-    height: 28em;
+    height: 35em;
     border: none;
     border-radius: 0;
-
+    margin-top: -.1em;
     border-top: 5px solid #9ba1a349;
   }
 
@@ -122,5 +156,8 @@ body {
   }
   .weather-forecast-dashboard__searchbar {
     display: block;
+    position: absolute;
+    top: .1em;
+    right: 9.2em;
   }
 }

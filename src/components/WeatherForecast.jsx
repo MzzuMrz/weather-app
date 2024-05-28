@@ -48,13 +48,13 @@ function DailyForecast({ day, weatherType, minTemp, maxTemp }) {
       </div>
       <div className="daily__temps">
         <WeatherDetail
-          label="Max Temp"
+          label="Temp Max"
           value={`${maxTemp}°C`}
           Icon={FaTemperatureHigh}
           color="DFA1A1"
         />
         <WeatherDetail
-          label="Min Temp"
+          label="Temp Min"
           value={`${minTemp}°C`}
           Icon={FaTemperatureLow}
           color="6D97CA"
@@ -72,7 +72,7 @@ function WeatherForecast({ forecast, onSearch }) {
         {
           maxTemp: 28,
           minTemp: 22,
-          humidity: 70,
+          Humadity: 70,
           windSpeed: 15,
           day: "Monday",
           detail: "THUNDERSTORM WITH LIGHT FRIZZE",
@@ -191,34 +191,36 @@ function WeatherForecast({ forecast, onSearch }) {
         {dailyForecast.map((item, index) => (
           <div key={index} className="daily-forecast">
             <p className="weather-forecast__detail">{item.detail}</p>
-            <WeatherDetail
-              label="Max Temp"
-              value={`${item.maxTemp}°C`}
-              Icon={FaTemperatureHigh}
-              color="DFA1A1"
-            />
-            <WeatherDetail
-              label="Min Temp"
-              value={`${item.minTemp}°C`}
-              Icon={FaTemperatureLow}
-              color="6D97CA"
-            />
-            <WeatherDetail
-              label="Humidity"
-              value={`${item.humidity}%`}
-              Icon={FaWater}
-              color="DFA1A1"
-            />
-            <WeatherDetail
-              label="Cloudy"
-              value={`${item.humidity}%`}
-              Icon={FaCloud}
-            />
-            <WeatherDetail
-              label="Wind Speed"
-              value={`${item.windSpeed} km/h`}
-              Icon={FaWind}
-            />
+            <div className="weather-forecast_detailcontainer">
+              <WeatherDetail
+                label="Max Temp"
+                value={`${item.maxTemp}°C`}
+                Icon={FaTemperatureHigh}
+                color="DFA1A1"
+              />
+              <WeatherDetail
+                label="Min Temp"
+                value={`${item.minTemp}°C`}
+                Icon={FaTemperatureLow}
+                color="6D97CA"
+              />
+              <WeatherDetail
+                label="Humadity"
+                value={`${item.Humadity}%`}
+                Icon={FaWater}
+                color="DFA1A1"
+              />
+              <WeatherDetail
+                label="Cloudy"
+                value={`${item.Humadity}%`}
+                Icon={FaCloud}
+              />
+              <WeatherDetail
+                label="Wind"
+                value={`${item.windSpeed} km/h`}
+                Icon={FaWind}
+              />
+            </div>
           </div>
         ))}
       </div>

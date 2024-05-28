@@ -20,6 +20,7 @@ function WeatherDashboard() {
   });
 
   const [forecast, setForecast] = useState([]);
+  const [error, setError] = useState(null);
 
   const handleSearch = useCallback(async (city) => {
     const apiKey = import.meta.env.VITE_OPENWEATHERMAP_API_KEY;
@@ -52,21 +53,28 @@ function WeatherDashboard() {
             detail: data.weather[0].description.toUpperCase(),
           },
         ]);
+        setError(null);
       } else {
         throw new Error(data.message);
       }
     } catch (error) {
       console.error("Error fetching weather data:", error);
+      setError("City not found or error fetching weather data");
       setCurrentWeather(null);
       setForecast([]);
     }
   }, []);
 
+  const handleError = (errorMessage) => {
+    setError(errorMessage);
+  };
+
   return (
     <div className="weather-dashboard">
       <div className="weather-forecast-dashboard__searchbar">
-        <SearchBar onSearch={handleSearch} />
+        <SearchBar onSearch={handleSearch} onError={handleError} />
       </div>
+      {error && <p className="error-message">{error}</p>}
       <CurrentWeather weather={currentWeather} />
       <WeatherForecast onSearch={handleSearch} forecast={forecast} />
     </div>

@@ -1,4 +1,3 @@
-// src/components/CurrentWeather.jsx
 import React from "react";
 import "../styles/components/currentWeather.scss";
 
@@ -11,7 +10,7 @@ function CurrentWeather({ weather }) {
 
   return (
     <div className="current-weather">
-      <div className="current-weather__temperature">{Math.round(temp)}°C</div>
+      <div className="current-weather__temperature">{Math.round(temp)}°</div>
       <div className="current-weather__info">
         <p className="current-weather__city">{city}</p>
         <div className="current-weather__datetime">

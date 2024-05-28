@@ -1,11 +1,8 @@
-// src/styles/components/currentWeather.scss
-
 .current-weather {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 10px;
-  gap: 1em;
 
   &__temperature {
     font-size: 143px;
@@ -14,17 +11,15 @@
 
   &__info {
     display: flex;
-    width: 21em;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    margin-top: 1em;
   }
 
   &__city {
-    display: flex;
-    flex-direction: column;
-    width: 10em;
     font-size: 60px;
+    font-weight: 300;
     margin: 0;
   }
 
@@ -32,12 +27,17 @@
     display: flex;
     font-size: 18px;
     gap: 1em;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: -15px;
   }
 
   &__icon {
-    font-size: 70px;
+    margin-left: 20px; /* Espacio entre la información y el icono */
+    img {
+      width: 70px;
+      height: 70px;
+    }
   }
 }
 
@@ -48,8 +48,10 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 15em;
-    margin: 0 -1em;
+    width: auto;
+    height: 13em;
+    margin: 0 -2.8em;
+    gap: .3em;
   }
 
   .current-weather__temperature {
@@ -78,9 +80,5 @@
     font-size: 10px;
     gap: 0.5em;
     flex-direction: row;
-  }
-
-  .current-weather__icon {
-    font-size: 40px;
   }
 }

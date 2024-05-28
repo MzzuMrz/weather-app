@@ -13,6 +13,102 @@
 
   &__searchbar {
     margin-top: 2.6em;
+    position: relative; /* Asegura que el dropdown se posicione correctamente */
+
+    .search-bar {
+      display: flex;
+      box-sizing: border-box;
+      width: 100%;
+      height: 50px;
+
+      &__input {
+        flex-grow: 1;
+        margin-right: 8px;
+        padding: 8px;
+        border: none;
+        border-radius: 20px;
+        background-color: transparent;
+        color: white;
+        font-size: 16px;
+
+        &::placeholder {
+          color: rgba(255, 255, 255, 0.7);
+          font-weight: 300;
+          font-size: 20px;
+          line-height: 23px;
+        }
+      }
+
+      &__button {
+        background-color: transparent;
+        color: rgba(255, 255, 255);
+        border: none;
+        cursor: pointer;
+        font-size: 30px;
+      }
+
+      .suggestions-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        width: 100%;
+        max-height: 200px;
+        overflow-y: auto;
+        z-index: 1000;
+        animation: fadeIn 0.3s ease-in-out;
+
+        &.loading {
+          opacity: 0.5;
+        }
+
+        li {
+          padding: 10px;
+          cursor: pointer;
+          transition: background-color 0.2s ease-in-out;
+
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+          }
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .spinner {
+        border: 4px solid rgba(0, 0, 0, 0.1);
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border-left-color: #09f;
+        animation: spin 1s ease infinite;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    }
   }
 
   &__title,
@@ -76,10 +172,6 @@
   padding: 0 1.1em;
 }
 
-.detail__info,
-.detail__icon {
-  margin-right: 1.3em;
-}
 
 .hourly__box {
   gap: 1.5rem;
@@ -90,6 +182,16 @@
   .weather-dashboard {
     flex-direction: column;
     align-items: center;
+  }
+  .weather-forecast__divider{
+    width: 90%;
+    margin-top: 1.1em;
+  }
+  .weather-forecast_detailcontainer{
+    padding: 0 1em;
+  }
+  .daily-forecast{
+    padding: 0 2em;
   }
 
   .divider {
@@ -129,8 +231,8 @@
   .weather-forecast__title {
     text-align: center;
     font-size: 14px;
-    margin-top: 3em;
-    margin-left: 1em;
+    margin-top: 4em;
+    margin-left: 2.2em;
   }
 
   .divider {
@@ -147,6 +249,8 @@
     text-align: center;
     text-transform: uppercase;
     color: #ffffff;
+    margin-top: .4em;
+    margin-left: -2em;
   }
 
   .weather-info {
@@ -163,7 +267,7 @@
     font-style: normal;
     font-weight: 300;
     font-size: 14px;
-    line-height: 23px;
+    line-height: 21px;
     color: rgba(255, 255, 255, 0.7);
   }
 
