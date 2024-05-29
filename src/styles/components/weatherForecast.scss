@@ -48,6 +48,7 @@
       }
 
       .suggestions-list {
+        cursor: pointer;
         list-style: none;
         padding: 0;
         margin: 0;
@@ -272,10 +273,9 @@
     line-height: 40px;
     color: rgba(255, 255, 255, 0.7);
   }
-  .detail__icon{
+  .detail__icon {
     margin-right: -1.5em;
   }
-  
 
   .weather-forecast__hourly {
     display: flex;
